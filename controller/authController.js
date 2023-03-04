@@ -31,7 +31,7 @@ module.exports.login = async function login(req, res) {
           httpOnly: true,
         });
 
-        res.json({ message: "Login Success" });
+        res.json({ JWT: token });
       } else {
         res.json({ message: "Invalid Credentials" });
       }
