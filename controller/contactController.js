@@ -20,6 +20,23 @@ module.exports.createContact = async function createContact(req, res) {
   }
 };
 
+module.exports.getAllContact = async function getAllContact(req, res) {
+  try {
+    let { userId } = req.body;
+
+    const user = await userModel.findById(userId);
+
+    res.json({
+      message: "Succesfully Created Contact",
+      data: user.savedContacts,
+    });
+  } catch (err) {
+    res.json({
+      message: err.message,
+    });
+  }
+};
+
 module.exports.deleteContact = async function deleteContact(req, res) {
   try {
     const body = req.body;

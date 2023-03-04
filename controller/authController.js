@@ -1,6 +1,6 @@
 const userModel = require("../model/userModel");
 const jwt = require("jsonwebtoken");
-const JWT_KEY = "nfa543gvaf31gae3r";
+const JWT_KEY = process.env.JWT_TOKEN;
 
 module.exports.signup = async function signup(req, res) {
   try {
